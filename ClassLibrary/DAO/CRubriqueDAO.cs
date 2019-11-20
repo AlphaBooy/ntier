@@ -28,10 +28,14 @@ namespace ClassLibrary.DAO
             Exception err = new Exception("not implemented");
             throw err;
         }
+
         public override List<CRubrique> getAll()
         {
+            //Récupération du premier niveau (rubriques qui n'ont pas de parent)
             return getAllFille(null);
+            
         }
+
         public override CRubrique find(int critere)
         {
             OracleCommand req = new OracleCommand();
@@ -41,7 +45,7 @@ namespace ClassLibrary.DAO
             req.Parameters.Add(pId);
 
             OracleDataReader res = req.ExecuteReader();
-            return new CRubrique((int)res[0], (String)res[1], (String)res[2], (int)res[3]);
+            return new CRubrique(int.Parse(res[0].ToString()), res[1].ToString(), res[2].ToString(), int.Parse(res[3].ToString()));
         }
 
         public List<CRubrique> getAllFille(Nullable<int> idParent)
@@ -64,8 +68,17 @@ namespace ClassLibrary.DAO
 
             while (res.Read())
             {
-                liste.Add(new CRubrique((int)res[0], (String)res[1], (String)res[2], (int)res[3]));
-                //int.Parse(res["ID"].ToString())
+                if (string.IsNullOrEmpty(res["ID_PARENT"].ToString()))
+                {
+                    CRubrique rubrique = new CRubrique(int.Parse(res["ID"].ToString()), res["NOM"].ToString(), res["DESCRIPTION"].ToString(), null);
+                    rubrique.RubriquesFilles = getAllFille(rubrique.Id);
+                    liste.Add(rubrique);
+                } else
+                {
+                    CRubrique rubrique = new CRubrique(int.Parse(res["ID"].ToString()), res["NOM"].ToString(), res["DESCRIPTION"].ToString(), int.Parse(res["ID_PARENT"].ToString()));
+                    rubrique.RubriquesFilles = getAllFille(rubrique.Id);
+                    liste.Add(rubrique);
+                }
             }
             return liste;
         }
