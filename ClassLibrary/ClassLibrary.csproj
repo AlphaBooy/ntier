@@ -43,12 +43,15 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="DAO.cs" />
+    <Compile Include="DAO\CArticleDAO.cs" />
     <Compile Include="DAO\CPaysDAO.cs" />
     <Compile Include="DAO\CRubriqueDAO.cs" />
     <Compile Include="DAO\CSequence.cs" />
     <Compile Include="DAO\DAOFactory.cs" />
+    <Compile Include="DAO\_CArticleDAO.cs" />
     <Compile Include="DAO\_CPaysDAO.cs" />
     <Compile Include="DAO\_CRubriqueDAO.cs" />
+    <Compile Include="OBJECTS\CArticle.cs" />
     <Compile Include="OBJECTS\CRubrique.cs" />
     <Compile Include="OBJECTS\CRegion.cs" />
     <Compile Include="SingleConnection.cs" />

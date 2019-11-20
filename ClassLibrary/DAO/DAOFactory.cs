@@ -20,6 +20,11 @@ namespace ClassLibrary.DAO
             return new _CRubriqueDAO(_connexionString);
         }
 
+        public static _CArticleDAO getCArticleDAO()
+        {
+            return new _CArticleDAO(_connexionString);
+        }
+
         //public static _CRegionDAO getCRegionDAO()
         //{
         //    return new _CRegionDAO(_connexionString);
