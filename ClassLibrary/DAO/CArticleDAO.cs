@@ -47,10 +47,37 @@ namespace ClassLibrary.DAO
             return liste;
         }
 
-        public override CArticle find(int critere)
+        public List<CArticle> getAllArticlesByRubrique(int id_rubrique)
         {
-            Exception err = new Exception("not implemented");
-            throw err;
+            OracleCommand req = new OracleCommand();
+            req.Connection = _connex;
+            req.CommandText = "SELECT * FROM ARTICLE WHERE id_rubrique = :id_rubrique";
+
+            OracleParameter pIdRubrique = new OracleParameter("id_rubrique", id_rubrique);
+            req.Parameters.Add(pIdRubrique);
+            OracleDataReader res = req.ExecuteReader();
+
+            List<CArticle> liste = new List<CArticle>();
+
+            while (res.Read())
+            {
+                liste.Add(new CArticle(int.Parse(res["ID"].ToString()), res["NOM"].ToString(), res["DESCRIPTION"].ToString(), int.Parse(res["ID_RUBRIQUE"].ToString()),
+                                       int.Parse(res["POIDS"].ToString()), int.Parse(res["PRIX_UNITAIRE"].ToString()), int.Parse(res["QUANTITE_STOCK"].ToString())));
+            }
+            return liste;
+        }
+
+        public override CArticle find(int id)
+        {
+            OracleCommand req = new OracleCommand();
+            req.Connection = _connex;
+            req.CommandText = "SELECT * FROM ARTICLE WHERE id = :id";
+
+            OracleParameter pId = new OracleParameter("id", id);
+            req.Parameters.Add(pId);
+            OracleDataReader res = req.ExecuteReader();
+            return new CArticle(int.Parse(res["ID"].ToString()), res["NOM"].ToString(), res["DESCRIPTION"].ToString(), int.Parse(res["ID_RUBRIQUE"].ToString()),
+                                       int.Parse(res["POIDS"].ToString()), int.Parse(res["PRIX_UNITAIRE"].ToString()), int.Parse(res["QUANTITE_STOCK"].ToString()));
         }
     }
 }

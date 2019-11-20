@@ -17,5 +17,17 @@ namespace WebApplication2
             return DAOFactory.getCArticleDAO().getAll();
         }
 
+        [WebMethod]
+        public List<CArticle> getAllArticlesFromRubrique(int id_rubrique)
+        {
+            return DAOFactory.getCArticleDAO().getAllArticlesByRubrique(id_rubrique);
+        }
+
+        [WebMethod]
+        public CArticle find(int id)
+        {
+            return DAOFactory.getCArticleDAO().find(id);
+        }
+
     }
 }

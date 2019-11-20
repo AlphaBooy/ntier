@@ -9,11 +9,263 @@
 //------------------------------------------------------------------------------
 
 namespace ntier.ServiceReference2 {
+    using System.Runtime.Serialization;
+    using System;
     
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
+    [System.Runtime.Serialization.DataContractAttribute(Name="CArticle", Namespace="http://tempuri.org/")]
+    [System.SerializableAttribute()]
+    public partial class CArticle : object, System.Runtime.Serialization.IExtensibleDataObject, System.ComponentModel.INotifyPropertyChanged {
+        
+        [System.NonSerializedAttribute()]
+        private System.Runtime.Serialization.ExtensionDataObject extensionDataField;
+        
+        private int IdField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string NomField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string DescriptionField;
+        
+        private int Id_rubriqueField;
+        
+        private int PoidsField;
+        
+        private int Prix_unitaireField;
+        
+        private int Quantite_stockField;
+        
+        [global::System.ComponentModel.BrowsableAttribute(false)]
+        public System.Runtime.Serialization.ExtensionDataObject ExtensionData {
+            get {
+                return this.extensionDataField;
+            }
+            set {
+                this.extensionDataField = value;
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute(IsRequired=true)]
+        public int Id {
+            get {
+                return this.IdField;
+            }
+            set {
+                if ((this.IdField.Equals(value) != true)) {
+                    this.IdField = value;
+                    this.RaisePropertyChanged("Id");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false)]
+        public string Nom {
+            get {
+                return this.NomField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.NomField, value) != true)) {
+                    this.NomField = value;
+                    this.RaisePropertyChanged("Nom");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false, Order=2)]
+        public string Description {
+            get {
+                return this.DescriptionField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.DescriptionField, value) != true)) {
+                    this.DescriptionField = value;
+                    this.RaisePropertyChanged("Description");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute(IsRequired=true, Order=3)]
+        public int Id_rubrique {
+            get {
+                return this.Id_rubriqueField;
+            }
+            set {
+                if ((this.Id_rubriqueField.Equals(value) != true)) {
+                    this.Id_rubriqueField = value;
+                    this.RaisePropertyChanged("Id_rubrique");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute(IsRequired=true, Order=4)]
+        public int Poids {
+            get {
+                return this.PoidsField;
+            }
+            set {
+                if ((this.PoidsField.Equals(value) != true)) {
+                    this.PoidsField = value;
+                    this.RaisePropertyChanged("Poids");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute(IsRequired=true, Order=5)]
+        public int Prix_unitaire {
+            get {
+                return this.Prix_unitaireField;
+            }
+            set {
+                if ((this.Prix_unitaireField.Equals(value) != true)) {
+                    this.Prix_unitaireField = value;
+                    this.RaisePropertyChanged("Prix_unitaire");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute(IsRequired=true, Order=6)]
+        public int Quantite_stock {
+            get {
+                return this.Quantite_stockField;
+            }
+            set {
+                if ((this.Quantite_stockField.Equals(value) != true)) {
+                    this.Quantite_stockField = value;
+                    this.RaisePropertyChanged("Quantite_stock");
+                }
+            }
+        }
+        
+        public event System.ComponentModel.PropertyChangedEventHandler PropertyChanged;
+        
+        protected void RaisePropertyChanged(string propertyName) {
+            System.ComponentModel.PropertyChangedEventHandler propertyChanged = this.PropertyChanged;
+            if ((propertyChanged != null)) {
+                propertyChanged(this, new System.ComponentModel.PropertyChangedEventArgs(propertyName));
+            }
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
+    [System.Runtime.Serialization.DataContractAttribute(Name="CRubrique", Namespace="http://tempuri.org/")]
+    [System.SerializableAttribute()]
+    public partial class CRubrique : object, System.Runtime.Serialization.IExtensibleDataObject, System.ComponentModel.INotifyPropertyChanged {
+        
+        [System.NonSerializedAttribute()]
+        private System.Runtime.Serialization.ExtensionDataObject extensionDataField;
+        
+        private int IdField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string NomField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string DescriptionField;
+        
+        private System.Nullable<int> IDParentField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private ntier.ServiceReference2.CRubrique[] RubriquesFillesField;
+        
+        [global::System.ComponentModel.BrowsableAttribute(false)]
+        public System.Runtime.Serialization.ExtensionDataObject ExtensionData {
+            get {
+                return this.extensionDataField;
+            }
+            set {
+                this.extensionDataField = value;
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute(IsRequired=true)]
+        public int Id {
+            get {
+                return this.IdField;
+            }
+            set {
+                if ((this.IdField.Equals(value) != true)) {
+                    this.IdField = value;
+                    this.RaisePropertyChanged("Id");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false)]
+        public string Nom {
+            get {
+                return this.NomField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.NomField, value) != true)) {
+                    this.NomField = value;
+                    this.RaisePropertyChanged("Nom");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false, Order=2)]
+        public string Description {
+            get {
+                return this.DescriptionField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.DescriptionField, value) != true)) {
+                    this.DescriptionField = value;
+                    this.RaisePropertyChanged("Description");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute(IsRequired=true, Order=3)]
+        public System.Nullable<int> IDParent {
+            get {
+                return this.IDParentField;
+            }
+            set {
+                if ((this.IDParentField.Equals(value) != true)) {
+                    this.IDParentField = value;
+                    this.RaisePropertyChanged("IDParent");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false, Order=4)]
+        public ntier.ServiceReference2.CRubrique[] RubriquesFilles {
+            get {
+                return this.RubriquesFillesField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.RubriquesFillesField, value) != true)) {
+                    this.RubriquesFillesField = value;
+                    this.RaisePropertyChanged("RubriquesFilles");
+                }
+            }
+        }
+        
+        public event System.ComponentModel.PropertyChangedEventHandler PropertyChanged;
+        
+        protected void RaisePropertyChanged(string propertyName) {
+            System.ComponentModel.PropertyChangedEventHandler propertyChanged = this.PropertyChanged;
+            if ((propertyChanged != null)) {
+                propertyChanged(this, new System.ComponentModel.PropertyChangedEventArgs(propertyName));
+            }
+        }
+    }
     
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
     [System.ServiceModel.ServiceContractAttribute(ConfigurationName="ServiceReference2.WebService2Soap")]
     public interface WebService2Soap {
+        
+        // CODEGEN : La génération du contrat de message depuis le nom d'élément getAllArticlesResult de l'espace de noms http://tempuri.org/ n'est pas marqué nillable
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/getAllArticles", ReplyAction="*")]
+        ntier.ServiceReference2.getAllArticlesResponse getAllArticles(ntier.ServiceReference2.getAllArticlesRequest request);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/getAllArticles", ReplyAction="*")]
+        System.Threading.Tasks.Task<ntier.ServiceReference2.getAllArticlesResponse> getAllArticlesAsync(ntier.ServiceReference2.getAllArticlesRequest request);
         
         // CODEGEN : La génération du contrat de message depuis le nom d'élément nom de l'espace de noms http://tempuri.org/ n'est pas marqué nillable
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/createPays", ReplyAction="*")]
@@ -22,12 +274,80 @@ namespace ntier.ServiceReference2 {
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/createPays", ReplyAction="*")]
         System.Threading.Tasks.Task<ntier.ServiceReference2.createPaysResponse> createPaysAsync(ntier.ServiceReference2.createPaysRequest request);
         
+        // CODEGEN : La génération du contrat de message depuis le nom d'élément getAllRubriqueResult de l'espace de noms http://tempuri.org/ n'est pas marqué nillable
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/getAllRubrique", ReplyAction="*")]
+        ntier.ServiceReference2.getAllRubriqueResponse getAllRubrique(ntier.ServiceReference2.getAllRubriqueRequest request);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/getAllRubrique", ReplyAction="*")]
+        System.Threading.Tasks.Task<ntier.ServiceReference2.getAllRubriqueResponse> getAllRubriqueAsync(ntier.ServiceReference2.getAllRubriqueRequest request);
+        
         // CODEGEN : La génération du contrat de message depuis le nom d'élément HelloWorld2Result de l'espace de noms http://tempuri.org/ n'est pas marqué nillable
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/HelloWorld2", ReplyAction="*")]
         ntier.ServiceReference2.HelloWorld2Response HelloWorld2(ntier.ServiceReference2.HelloWorld2Request request);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/HelloWorld2", ReplyAction="*")]
         System.Threading.Tasks.Task<ntier.ServiceReference2.HelloWorld2Response> HelloWorld2Async(ntier.ServiceReference2.HelloWorld2Request request);
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+    [System.ServiceModel.MessageContractAttribute(IsWrapped=false)]
+    public partial class getAllArticlesRequest {
+        
+        [System.ServiceModel.MessageBodyMemberAttribute(Name="getAllArticles", Namespace="http://tempuri.org/", Order=0)]
+        public ntier.ServiceReference2.getAllArticlesRequestBody Body;
+        
+        public getAllArticlesRequest() {
+        }
+        
+        public getAllArticlesRequest(ntier.ServiceReference2.getAllArticlesRequestBody Body) {
+            this.Body = Body;
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+    [System.Runtime.Serialization.DataContractAttribute()]
+    public partial class getAllArticlesRequestBody {
+        
+        public getAllArticlesRequestBody() {
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+    [System.ServiceModel.MessageContractAttribute(IsWrapped=false)]
+    public partial class getAllArticlesResponse {
+        
+        [System.ServiceModel.MessageBodyMemberAttribute(Name="getAllArticlesResponse", Namespace="http://tempuri.org/", Order=0)]
+        public ntier.ServiceReference2.getAllArticlesResponseBody Body;
+        
+        public getAllArticlesResponse() {
+        }
+        
+        public getAllArticlesResponse(ntier.ServiceReference2.getAllArticlesResponseBody Body) {
+            this.Body = Body;
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+    [System.Runtime.Serialization.DataContractAttribute(Namespace="http://tempuri.org/")]
+    public partial class getAllArticlesResponseBody {
+        
+        [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false, Order=0)]
+        public ntier.ServiceReference2.CArticle[] getAllArticlesResult;
+        
+        public getAllArticlesResponseBody() {
+        }
+        
+        public getAllArticlesResponseBody(ntier.ServiceReference2.CArticle[] getAllArticlesResult) {
+            this.getAllArticlesResult = getAllArticlesResult;
+        }
     }
     
     [System.Diagnostics.DebuggerStepThroughAttribute()]
@@ -95,6 +415,67 @@ namespace ntier.ServiceReference2 {
         
         public createPaysResponseBody(int createPaysResult) {
             this.createPaysResult = createPaysResult;
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+    [System.ServiceModel.MessageContractAttribute(IsWrapped=false)]
+    public partial class getAllRubriqueRequest {
+        
+        [System.ServiceModel.MessageBodyMemberAttribute(Name="getAllRubrique", Namespace="http://tempuri.org/", Order=0)]
+        public ntier.ServiceReference2.getAllRubriqueRequestBody Body;
+        
+        public getAllRubriqueRequest() {
+        }
+        
+        public getAllRubriqueRequest(ntier.ServiceReference2.getAllRubriqueRequestBody Body) {
+            this.Body = Body;
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+    [System.Runtime.Serialization.DataContractAttribute()]
+    public partial class getAllRubriqueRequestBody {
+        
+        public getAllRubriqueRequestBody() {
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+    [System.ServiceModel.MessageContractAttribute(IsWrapped=false)]
+    public partial class getAllRubriqueResponse {
+        
+        [System.ServiceModel.MessageBodyMemberAttribute(Name="getAllRubriqueResponse", Namespace="http://tempuri.org/", Order=0)]
+        public ntier.ServiceReference2.getAllRubriqueResponseBody Body;
+        
+        public getAllRubriqueResponse() {
+        }
+        
+        public getAllRubriqueResponse(ntier.ServiceReference2.getAllRubriqueResponseBody Body) {
+            this.Body = Body;
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+    [System.Runtime.Serialization.DataContractAttribute(Namespace="http://tempuri.org/")]
+    public partial class getAllRubriqueResponseBody {
+        
+        [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false, Order=0)]
+        public ntier.ServiceReference2.CRubrique[] getAllRubriqueResult;
+        
+        public getAllRubriqueResponseBody() {
+        }
+        
+        public getAllRubriqueResponseBody(ntier.ServiceReference2.CRubrique[] getAllRubriqueResult) {
+            this.getAllRubriqueResult = getAllRubriqueResult;
         }
     }
     
@@ -187,6 +568,29 @@ namespace ntier.ServiceReference2 {
         }
         
         [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        ntier.ServiceReference2.getAllArticlesResponse ntier.ServiceReference2.WebService2Soap.getAllArticles(ntier.ServiceReference2.getAllArticlesRequest request) {
+            return base.Channel.getAllArticles(request);
+        }
+        
+        public ntier.ServiceReference2.CArticle[] getAllArticles() {
+            ntier.ServiceReference2.getAllArticlesRequest inValue = new ntier.ServiceReference2.getAllArticlesRequest();
+            inValue.Body = new ntier.ServiceReference2.getAllArticlesRequestBody();
+            ntier.ServiceReference2.getAllArticlesResponse retVal = ((ntier.ServiceReference2.WebService2Soap)(this)).getAllArticles(inValue);
+            return retVal.Body.getAllArticlesResult;
+        }
+        
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        System.Threading.Tasks.Task<ntier.ServiceReference2.getAllArticlesResponse> ntier.ServiceReference2.WebService2Soap.getAllArticlesAsync(ntier.ServiceReference2.getAllArticlesRequest request) {
+            return base.Channel.getAllArticlesAsync(request);
+        }
+        
+        public System.Threading.Tasks.Task<ntier.ServiceReference2.getAllArticlesResponse> getAllArticlesAsync() {
+            ntier.ServiceReference2.getAllArticlesRequest inValue = new ntier.ServiceReference2.getAllArticlesRequest();
+            inValue.Body = new ntier.ServiceReference2.getAllArticlesRequestBody();
+            return ((ntier.ServiceReference2.WebService2Soap)(this)).getAllArticlesAsync(inValue);
+        }
+        
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
         ntier.ServiceReference2.createPaysResponse ntier.ServiceReference2.WebService2Soap.createPays(ntier.ServiceReference2.createPaysRequest request) {
             return base.Channel.createPays(request);
         }
@@ -209,6 +613,29 @@ namespace ntier.ServiceReference2 {
             inValue.Body = new ntier.ServiceReference2.createPaysRequestBody();
             inValue.Body.nom = nom;
             return ((ntier.ServiceReference2.WebService2Soap)(this)).createPaysAsync(inValue);
+        }
+        
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        ntier.ServiceReference2.getAllRubriqueResponse ntier.ServiceReference2.WebService2Soap.getAllRubrique(ntier.ServiceReference2.getAllRubriqueRequest request) {
+            return base.Channel.getAllRubrique(request);
+        }
+        
+        public ntier.ServiceReference2.CRubrique[] getAllRubrique() {
+            ntier.ServiceReference2.getAllRubriqueRequest inValue = new ntier.ServiceReference2.getAllRubriqueRequest();
+            inValue.Body = new ntier.ServiceReference2.getAllRubriqueRequestBody();
+            ntier.ServiceReference2.getAllRubriqueResponse retVal = ((ntier.ServiceReference2.WebService2Soap)(this)).getAllRubrique(inValue);
+            return retVal.Body.getAllRubriqueResult;
+        }
+        
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        System.Threading.Tasks.Task<ntier.ServiceReference2.getAllRubriqueResponse> ntier.ServiceReference2.WebService2Soap.getAllRubriqueAsync(ntier.ServiceReference2.getAllRubriqueRequest request) {
+            return base.Channel.getAllRubriqueAsync(request);
+        }
+        
+        public System.Threading.Tasks.Task<ntier.ServiceReference2.getAllRubriqueResponse> getAllRubriqueAsync() {
+            ntier.ServiceReference2.getAllRubriqueRequest inValue = new ntier.ServiceReference2.getAllRubriqueRequest();
+            inValue.Body = new ntier.ServiceReference2.getAllRubriqueRequestBody();
+            return ((ntier.ServiceReference2.WebService2Soap)(this)).getAllRubriqueAsync(inValue);
         }
         
         [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]

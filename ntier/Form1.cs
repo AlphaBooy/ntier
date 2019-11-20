@@ -27,10 +27,11 @@ namespace ntier
 
         private void button1_Click(object sender, EventArgs e)
         {
-            if (textBox1.Text == null || textBox1.Text =="")
+            if (textBox1.Text == null || textBox1.Text == "")
             {
                 MessageBox.Show("Veuillez renseigner le nom du pays !");
-            } else
+            }
+            else
             {
                 client.createPaysAsync(textBox1.Text);
             }
@@ -48,6 +49,6 @@ namespace ntier
 
         }
 
-        
+
     }
 }
