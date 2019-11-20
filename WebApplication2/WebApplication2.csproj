@@ -80,6 +80,9 @@
     <Content Include="App_Code\rubriqueService.cs">
       <SubType>Component</SubType>
     </Content>
+    <Content Include="App_Code\articleService.cs">
+      <SubType>Component</SubType>
+    </Content>
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>

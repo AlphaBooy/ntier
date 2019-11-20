@@ -31,8 +31,20 @@ namespace ClassLibrary.DAO
 
         public override List<CArticle> getAll()
         {
-            Exception err = new Exception("not implemented");
-            throw err;
+            OracleCommand req = new OracleCommand();
+            req.Connection = _connex;
+            req.CommandText = "SELECT * FROM ARTICLE";
+
+            OracleDataReader res = req.ExecuteReader();
+
+            List<CArticle> liste = new List<CArticle>();
+
+            while (res.Read())
+            {
+                liste.Add(new CArticle(int.Parse(res["ID"].ToString()), res["NOM"].ToString(), res["DESCRIPTION"].ToString(), int.Parse(res["ID_RUBRIQUE"].ToString()), 
+                                       int.Parse(res["POIDS"].ToString()), int.Parse(res["PRIX_UNITAIRE"].ToString()), int.Parse(res["QUANTITE_STOCK"].ToString())));
+            }
+            return liste;
         }
 
         public override CArticle find(int critere)
