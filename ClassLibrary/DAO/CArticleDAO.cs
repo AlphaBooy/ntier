@@ -44,6 +44,7 @@ namespace ClassLibrary.DAO
                 liste.Add(new CArticle(int.Parse(res["ID"].ToString()), res["NOM"].ToString(), res["DESCRIPTION"].ToString(), int.Parse(res["ID_RUBRIQUE"].ToString()), 
                                        int.Parse(res["POIDS"].ToString()), int.Parse(res["PRIX_UNITAIRE"].ToString()), int.Parse(res["QUANTITE_STOCK"].ToString())));
             }
+            res.Close();
             return liste;
         }
 
@@ -64,6 +65,7 @@ namespace ClassLibrary.DAO
                 liste.Add(new CArticle(int.Parse(res["ID"].ToString()), res["NOM"].ToString(), res["DESCRIPTION"].ToString(), int.Parse(res["ID_RUBRIQUE"].ToString()),
                                        int.Parse(res["POIDS"].ToString()), int.Parse(res["PRIX_UNITAIRE"].ToString()), int.Parse(res["QUANTITE_STOCK"].ToString())));
             }
+            res.Close();
             return liste;
         }
 
@@ -80,6 +82,7 @@ namespace ClassLibrary.DAO
                 return new CArticle(int.Parse(res["ID"].ToString()), res["NOM"].ToString(), res["DESCRIPTION"].ToString(), int.Parse(res["ID_RUBRIQUE"].ToString()),
                                        int.Parse(res["POIDS"].ToString()), int.Parse(res["PRIX_UNITAIRE"].ToString()), int.Parse(res["QUANTITE_STOCK"].ToString()));
             }
+            res.Close();
             return null;
         }
     }

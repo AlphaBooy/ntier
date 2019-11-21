@@ -665,13 +665,13 @@ namespace ntier.ServiceReference2 {
         [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false, Order=1)]
         public string description;
         
-        [System.Runtime.Serialization.DataMemberAttribute(Order=2)]
-        public int id_parent;
+        [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false, Order=2)]
+        public ntier.ServiceReference2.CRubrique id_parent;
         
         public createRubriqueRequestBody() {
         }
         
-        public createRubriqueRequestBody(string nom, string description, int id_parent) {
+        public createRubriqueRequestBody(string nom, string description, ntier.ServiceReference2.CRubrique id_parent) {
             this.nom = nom;
             this.description = description;
             this.id_parent = id_parent;
@@ -926,7 +926,7 @@ namespace ntier.ServiceReference2 {
             return base.Channel.createRubrique(request);
         }
         
-        public int createRubrique(string nom, string description, int id_parent) {
+        public int createRubrique(string nom, string description, ntier.ServiceReference2.CRubrique id_parent) {
             ntier.ServiceReference2.createRubriqueRequest inValue = new ntier.ServiceReference2.createRubriqueRequest();
             inValue.Body = new ntier.ServiceReference2.createRubriqueRequestBody();
             inValue.Body.nom = nom;
@@ -941,7 +941,7 @@ namespace ntier.ServiceReference2 {
             return base.Channel.createRubriqueAsync(request);
         }
         
-        public System.Threading.Tasks.Task<ntier.ServiceReference2.createRubriqueResponse> createRubriqueAsync(string nom, string description, int id_parent) {
+        public System.Threading.Tasks.Task<ntier.ServiceReference2.createRubriqueResponse> createRubriqueAsync(string nom, string description, ntier.ServiceReference2.CRubrique id_parent) {
             ntier.ServiceReference2.createRubriqueRequest inValue = new ntier.ServiceReference2.createRubriqueRequest();
             inValue.Body = new ntier.ServiceReference2.createRubriqueRequestBody();
             inValue.Body.nom = nom;

@@ -61,7 +61,9 @@ namespace ClassLibrary.DAO
             req.Parameters.Add(pId);
 
             OracleDataReader res = req.ExecuteReader();
-            return new CRubrique(int.Parse(res[0].ToString()), res[1].ToString(), res[2].ToString(), int.Parse(res[3].ToString()));
+            CRubrique returnRubrique =  new CRubrique(int.Parse(res[0].ToString()), res[1].ToString(), res[2].ToString(), int.Parse(res[3].ToString()));
+            res.Close();
+            return returnRubrique;
         }
 
         public List<CRubrique> getAllFille(Nullable<int> idParent)
@@ -96,6 +98,7 @@ namespace ClassLibrary.DAO
                     liste.Add(rubrique);
                 }
             }
+            res.Close();
             return liste;
         }
     }
