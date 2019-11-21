@@ -267,6 +267,20 @@ namespace ntier.ServiceReference2 {
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/getAllArticles", ReplyAction="*")]
         System.Threading.Tasks.Task<ntier.ServiceReference2.getAllArticlesResponse> getAllArticlesAsync(ntier.ServiceReference2.getAllArticlesRequest request);
         
+        // CODEGEN : La génération du contrat de message depuis le nom d'élément getAllArticlesFromRubriqueResult de l'espace de noms http://tempuri.org/ n'est pas marqué nillable
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/getAllArticlesFromRubrique", ReplyAction="*")]
+        ntier.ServiceReference2.getAllArticlesFromRubriqueResponse getAllArticlesFromRubrique(ntier.ServiceReference2.getAllArticlesFromRubriqueRequest request);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/getAllArticlesFromRubrique", ReplyAction="*")]
+        System.Threading.Tasks.Task<ntier.ServiceReference2.getAllArticlesFromRubriqueResponse> getAllArticlesFromRubriqueAsync(ntier.ServiceReference2.getAllArticlesFromRubriqueRequest request);
+        
+        // CODEGEN : La génération du contrat de message depuis le nom d'élément findArticleResult de l'espace de noms http://tempuri.org/ n'est pas marqué nillable
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/findArticle", ReplyAction="*")]
+        ntier.ServiceReference2.findArticleResponse findArticle(ntier.ServiceReference2.findArticleRequest request);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/findArticle", ReplyAction="*")]
+        System.Threading.Tasks.Task<ntier.ServiceReference2.findArticleResponse> findArticleAsync(ntier.ServiceReference2.findArticleRequest request);
+        
         // CODEGEN : La génération du contrat de message depuis le nom d'élément nom de l'espace de noms http://tempuri.org/ n'est pas marqué nillable
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/createPays", ReplyAction="*")]
         ntier.ServiceReference2.createPaysResponse createPays(ntier.ServiceReference2.createPaysRequest request);
@@ -280,6 +294,13 @@ namespace ntier.ServiceReference2 {
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/getAllRubrique", ReplyAction="*")]
         System.Threading.Tasks.Task<ntier.ServiceReference2.getAllRubriqueResponse> getAllRubriqueAsync(ntier.ServiceReference2.getAllRubriqueRequest request);
+        
+        // CODEGEN : La génération du contrat de message depuis le nom d'élément nom de l'espace de noms http://tempuri.org/ n'est pas marqué nillable
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/createRubrique", ReplyAction="*")]
+        ntier.ServiceReference2.createRubriqueResponse createRubrique(ntier.ServiceReference2.createRubriqueRequest request);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/createRubrique", ReplyAction="*")]
+        System.Threading.Tasks.Task<ntier.ServiceReference2.createRubriqueResponse> createRubriqueAsync(ntier.ServiceReference2.createRubriqueRequest request);
         
         // CODEGEN : La génération du contrat de message depuis le nom d'élément HelloWorld2Result de l'espace de noms http://tempuri.org/ n'est pas marqué nillable
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/HelloWorld2", ReplyAction="*")]
@@ -347,6 +368,142 @@ namespace ntier.ServiceReference2 {
         
         public getAllArticlesResponseBody(ntier.ServiceReference2.CArticle[] getAllArticlesResult) {
             this.getAllArticlesResult = getAllArticlesResult;
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+    [System.ServiceModel.MessageContractAttribute(IsWrapped=false)]
+    public partial class getAllArticlesFromRubriqueRequest {
+        
+        [System.ServiceModel.MessageBodyMemberAttribute(Name="getAllArticlesFromRubrique", Namespace="http://tempuri.org/", Order=0)]
+        public ntier.ServiceReference2.getAllArticlesFromRubriqueRequestBody Body;
+        
+        public getAllArticlesFromRubriqueRequest() {
+        }
+        
+        public getAllArticlesFromRubriqueRequest(ntier.ServiceReference2.getAllArticlesFromRubriqueRequestBody Body) {
+            this.Body = Body;
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+    [System.Runtime.Serialization.DataContractAttribute(Namespace="http://tempuri.org/")]
+    public partial class getAllArticlesFromRubriqueRequestBody {
+        
+        [System.Runtime.Serialization.DataMemberAttribute(Order=0)]
+        public int id_rubrique;
+        
+        public getAllArticlesFromRubriqueRequestBody() {
+        }
+        
+        public getAllArticlesFromRubriqueRequestBody(int id_rubrique) {
+            this.id_rubrique = id_rubrique;
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+    [System.ServiceModel.MessageContractAttribute(IsWrapped=false)]
+    public partial class getAllArticlesFromRubriqueResponse {
+        
+        [System.ServiceModel.MessageBodyMemberAttribute(Name="getAllArticlesFromRubriqueResponse", Namespace="http://tempuri.org/", Order=0)]
+        public ntier.ServiceReference2.getAllArticlesFromRubriqueResponseBody Body;
+        
+        public getAllArticlesFromRubriqueResponse() {
+        }
+        
+        public getAllArticlesFromRubriqueResponse(ntier.ServiceReference2.getAllArticlesFromRubriqueResponseBody Body) {
+            this.Body = Body;
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+    [System.Runtime.Serialization.DataContractAttribute(Namespace="http://tempuri.org/")]
+    public partial class getAllArticlesFromRubriqueResponseBody {
+        
+        [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false, Order=0)]
+        public ntier.ServiceReference2.CArticle[] getAllArticlesFromRubriqueResult;
+        
+        public getAllArticlesFromRubriqueResponseBody() {
+        }
+        
+        public getAllArticlesFromRubriqueResponseBody(ntier.ServiceReference2.CArticle[] getAllArticlesFromRubriqueResult) {
+            this.getAllArticlesFromRubriqueResult = getAllArticlesFromRubriqueResult;
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+    [System.ServiceModel.MessageContractAttribute(IsWrapped=false)]
+    public partial class findArticleRequest {
+        
+        [System.ServiceModel.MessageBodyMemberAttribute(Name="findArticle", Namespace="http://tempuri.org/", Order=0)]
+        public ntier.ServiceReference2.findArticleRequestBody Body;
+        
+        public findArticleRequest() {
+        }
+        
+        public findArticleRequest(ntier.ServiceReference2.findArticleRequestBody Body) {
+            this.Body = Body;
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+    [System.Runtime.Serialization.DataContractAttribute(Namespace="http://tempuri.org/")]
+    public partial class findArticleRequestBody {
+        
+        [System.Runtime.Serialization.DataMemberAttribute(Order=0)]
+        public int id;
+        
+        public findArticleRequestBody() {
+        }
+        
+        public findArticleRequestBody(int id) {
+            this.id = id;
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+    [System.ServiceModel.MessageContractAttribute(IsWrapped=false)]
+    public partial class findArticleResponse {
+        
+        [System.ServiceModel.MessageBodyMemberAttribute(Name="findArticleResponse", Namespace="http://tempuri.org/", Order=0)]
+        public ntier.ServiceReference2.findArticleResponseBody Body;
+        
+        public findArticleResponse() {
+        }
+        
+        public findArticleResponse(ntier.ServiceReference2.findArticleResponseBody Body) {
+            this.Body = Body;
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+    [System.Runtime.Serialization.DataContractAttribute(Namespace="http://tempuri.org/")]
+    public partial class findArticleResponseBody {
+        
+        [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false, Order=0)]
+        public ntier.ServiceReference2.CArticle findArticleResult;
+        
+        public findArticleResponseBody() {
+        }
+        
+        public findArticleResponseBody(ntier.ServiceReference2.CArticle findArticleResult) {
+            this.findArticleResult = findArticleResult;
         }
     }
     
@@ -483,6 +640,82 @@ namespace ntier.ServiceReference2 {
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
     [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
     [System.ServiceModel.MessageContractAttribute(IsWrapped=false)]
+    public partial class createRubriqueRequest {
+        
+        [System.ServiceModel.MessageBodyMemberAttribute(Name="createRubrique", Namespace="http://tempuri.org/", Order=0)]
+        public ntier.ServiceReference2.createRubriqueRequestBody Body;
+        
+        public createRubriqueRequest() {
+        }
+        
+        public createRubriqueRequest(ntier.ServiceReference2.createRubriqueRequestBody Body) {
+            this.Body = Body;
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+    [System.Runtime.Serialization.DataContractAttribute(Namespace="http://tempuri.org/")]
+    public partial class createRubriqueRequestBody {
+        
+        [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false, Order=0)]
+        public string nom;
+        
+        [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false, Order=1)]
+        public string description;
+        
+        [System.Runtime.Serialization.DataMemberAttribute(Order=2)]
+        public int id_parent;
+        
+        public createRubriqueRequestBody() {
+        }
+        
+        public createRubriqueRequestBody(string nom, string description, int id_parent) {
+            this.nom = nom;
+            this.description = description;
+            this.id_parent = id_parent;
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+    [System.ServiceModel.MessageContractAttribute(IsWrapped=false)]
+    public partial class createRubriqueResponse {
+        
+        [System.ServiceModel.MessageBodyMemberAttribute(Name="createRubriqueResponse", Namespace="http://tempuri.org/", Order=0)]
+        public ntier.ServiceReference2.createRubriqueResponseBody Body;
+        
+        public createRubriqueResponse() {
+        }
+        
+        public createRubriqueResponse(ntier.ServiceReference2.createRubriqueResponseBody Body) {
+            this.Body = Body;
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+    [System.Runtime.Serialization.DataContractAttribute(Namespace="http://tempuri.org/")]
+    public partial class createRubriqueResponseBody {
+        
+        [System.Runtime.Serialization.DataMemberAttribute(Order=0)]
+        public int createRubriqueResult;
+        
+        public createRubriqueResponseBody() {
+        }
+        
+        public createRubriqueResponseBody(int createRubriqueResult) {
+            this.createRubriqueResult = createRubriqueResult;
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+    [System.ServiceModel.MessageContractAttribute(IsWrapped=false)]
     public partial class HelloWorld2Request {
         
         [System.ServiceModel.MessageBodyMemberAttribute(Name="HelloWorld2", Namespace="http://tempuri.org/", Order=0)]
@@ -591,6 +824,56 @@ namespace ntier.ServiceReference2 {
         }
         
         [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        ntier.ServiceReference2.getAllArticlesFromRubriqueResponse ntier.ServiceReference2.WebService2Soap.getAllArticlesFromRubrique(ntier.ServiceReference2.getAllArticlesFromRubriqueRequest request) {
+            return base.Channel.getAllArticlesFromRubrique(request);
+        }
+        
+        public ntier.ServiceReference2.CArticle[] getAllArticlesFromRubrique(int id_rubrique) {
+            ntier.ServiceReference2.getAllArticlesFromRubriqueRequest inValue = new ntier.ServiceReference2.getAllArticlesFromRubriqueRequest();
+            inValue.Body = new ntier.ServiceReference2.getAllArticlesFromRubriqueRequestBody();
+            inValue.Body.id_rubrique = id_rubrique;
+            ntier.ServiceReference2.getAllArticlesFromRubriqueResponse retVal = ((ntier.ServiceReference2.WebService2Soap)(this)).getAllArticlesFromRubrique(inValue);
+            return retVal.Body.getAllArticlesFromRubriqueResult;
+        }
+        
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        System.Threading.Tasks.Task<ntier.ServiceReference2.getAllArticlesFromRubriqueResponse> ntier.ServiceReference2.WebService2Soap.getAllArticlesFromRubriqueAsync(ntier.ServiceReference2.getAllArticlesFromRubriqueRequest request) {
+            return base.Channel.getAllArticlesFromRubriqueAsync(request);
+        }
+        
+        public System.Threading.Tasks.Task<ntier.ServiceReference2.getAllArticlesFromRubriqueResponse> getAllArticlesFromRubriqueAsync(int id_rubrique) {
+            ntier.ServiceReference2.getAllArticlesFromRubriqueRequest inValue = new ntier.ServiceReference2.getAllArticlesFromRubriqueRequest();
+            inValue.Body = new ntier.ServiceReference2.getAllArticlesFromRubriqueRequestBody();
+            inValue.Body.id_rubrique = id_rubrique;
+            return ((ntier.ServiceReference2.WebService2Soap)(this)).getAllArticlesFromRubriqueAsync(inValue);
+        }
+        
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        ntier.ServiceReference2.findArticleResponse ntier.ServiceReference2.WebService2Soap.findArticle(ntier.ServiceReference2.findArticleRequest request) {
+            return base.Channel.findArticle(request);
+        }
+        
+        public ntier.ServiceReference2.CArticle findArticle(int id) {
+            ntier.ServiceReference2.findArticleRequest inValue = new ntier.ServiceReference2.findArticleRequest();
+            inValue.Body = new ntier.ServiceReference2.findArticleRequestBody();
+            inValue.Body.id = id;
+            ntier.ServiceReference2.findArticleResponse retVal = ((ntier.ServiceReference2.WebService2Soap)(this)).findArticle(inValue);
+            return retVal.Body.findArticleResult;
+        }
+        
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        System.Threading.Tasks.Task<ntier.ServiceReference2.findArticleResponse> ntier.ServiceReference2.WebService2Soap.findArticleAsync(ntier.ServiceReference2.findArticleRequest request) {
+            return base.Channel.findArticleAsync(request);
+        }
+        
+        public System.Threading.Tasks.Task<ntier.ServiceReference2.findArticleResponse> findArticleAsync(int id) {
+            ntier.ServiceReference2.findArticleRequest inValue = new ntier.ServiceReference2.findArticleRequest();
+            inValue.Body = new ntier.ServiceReference2.findArticleRequestBody();
+            inValue.Body.id = id;
+            return ((ntier.ServiceReference2.WebService2Soap)(this)).findArticleAsync(inValue);
+        }
+        
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
         ntier.ServiceReference2.createPaysResponse ntier.ServiceReference2.WebService2Soap.createPays(ntier.ServiceReference2.createPaysRequest request) {
             return base.Channel.createPays(request);
         }
@@ -636,6 +919,35 @@ namespace ntier.ServiceReference2 {
             ntier.ServiceReference2.getAllRubriqueRequest inValue = new ntier.ServiceReference2.getAllRubriqueRequest();
             inValue.Body = new ntier.ServiceReference2.getAllRubriqueRequestBody();
             return ((ntier.ServiceReference2.WebService2Soap)(this)).getAllRubriqueAsync(inValue);
+        }
+        
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        ntier.ServiceReference2.createRubriqueResponse ntier.ServiceReference2.WebService2Soap.createRubrique(ntier.ServiceReference2.createRubriqueRequest request) {
+            return base.Channel.createRubrique(request);
+        }
+        
+        public int createRubrique(string nom, string description, int id_parent) {
+            ntier.ServiceReference2.createRubriqueRequest inValue = new ntier.ServiceReference2.createRubriqueRequest();
+            inValue.Body = new ntier.ServiceReference2.createRubriqueRequestBody();
+            inValue.Body.nom = nom;
+            inValue.Body.description = description;
+            inValue.Body.id_parent = id_parent;
+            ntier.ServiceReference2.createRubriqueResponse retVal = ((ntier.ServiceReference2.WebService2Soap)(this)).createRubrique(inValue);
+            return retVal.Body.createRubriqueResult;
+        }
+        
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        System.Threading.Tasks.Task<ntier.ServiceReference2.createRubriqueResponse> ntier.ServiceReference2.WebService2Soap.createRubriqueAsync(ntier.ServiceReference2.createRubriqueRequest request) {
+            return base.Channel.createRubriqueAsync(request);
+        }
+        
+        public System.Threading.Tasks.Task<ntier.ServiceReference2.createRubriqueResponse> createRubriqueAsync(string nom, string description, int id_parent) {
+            ntier.ServiceReference2.createRubriqueRequest inValue = new ntier.ServiceReference2.createRubriqueRequest();
+            inValue.Body = new ntier.ServiceReference2.createRubriqueRequestBody();
+            inValue.Body.nom = nom;
+            inValue.Body.description = description;
+            inValue.Body.id_parent = id_parent;
+            return ((ntier.ServiceReference2.WebService2Soap)(this)).createRubriqueAsync(inValue);
         }
         
         [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]

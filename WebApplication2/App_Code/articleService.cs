@@ -24,7 +24,7 @@ namespace WebApplication2
         }
 
         [WebMethod]
-        public CArticle find(int id)
+        public CArticle findArticle(int id)
         {
             return DAOFactory.getCArticleDAO().find(id);
         }

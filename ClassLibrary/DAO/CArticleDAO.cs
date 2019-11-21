@@ -76,8 +76,11 @@ namespace ClassLibrary.DAO
             OracleParameter pId = new OracleParameter("id", id);
             req.Parameters.Add(pId);
             OracleDataReader res = req.ExecuteReader();
-            return new CArticle(int.Parse(res["ID"].ToString()), res["NOM"].ToString(), res["DESCRIPTION"].ToString(), int.Parse(res["ID_RUBRIQUE"].ToString()),
+            while (res.Read()) {
+                return new CArticle(int.Parse(res["ID"].ToString()), res["NOM"].ToString(), res["DESCRIPTION"].ToString(), int.Parse(res["ID_RUBRIQUE"].ToString()),
                                        int.Parse(res["POIDS"].ToString()), int.Parse(res["PRIX_UNITAIRE"].ToString()), int.Parse(res["QUANTITE_STOCK"].ToString()));
+            }
+            return null;
         }
     }
 }

@@ -47,6 +47,14 @@ namespace ClassLibrary.OBJECTS
             this._rubriquesFilles = null;
         }
 
+        public CRubrique(String nom, String description, Nullable<int> idparent)
+        {
+            this.nom = nom;
+            this.description = description;
+            this.idparent = idparent;
+            this._rubriquesFilles = null;
+        }
+
         public CRubrique()
         {
         }

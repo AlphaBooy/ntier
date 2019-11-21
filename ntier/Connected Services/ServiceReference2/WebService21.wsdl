@@ -28,6 +28,34 @@
           <s:element minOccurs="1" maxOccurs="1" name="Quantite_stock" type="s:int" />
         </s:sequence>
       </s:complexType>
+      <s:element name="getAllArticlesFromRubrique">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="id_rubrique" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="getAllArticlesFromRubriqueResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="getAllArticlesFromRubriqueResult" type="tns:ArrayOfCArticle" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="findArticle">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="id" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="findArticleResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="findArticleResult" type="tns:CArticle" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
       <s:element name="createPays">
         <s:complexType>
           <s:sequence>
@@ -66,6 +94,22 @@
           <s:element minOccurs="0" maxOccurs="1" name="RubriquesFilles" type="tns:ArrayOfCRubrique" />
         </s:sequence>
       </s:complexType>
+      <s:element name="createRubrique">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="nom" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="description" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="id_parent" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="createRubriqueResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="createRubriqueResult" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
       <s:element name="HelloWorld2">
         <s:complexType />
       </s:element>
@@ -84,6 +128,18 @@
   <wsdl:message name="getAllArticlesSoapOut">
     <wsdl:part name="parameters" element="tns:getAllArticlesResponse" />
   </wsdl:message>
+  <wsdl:message name="getAllArticlesFromRubriqueSoapIn">
+    <wsdl:part name="parameters" element="tns:getAllArticlesFromRubrique" />
+  </wsdl:message>
+  <wsdl:message name="getAllArticlesFromRubriqueSoapOut">
+    <wsdl:part name="parameters" element="tns:getAllArticlesFromRubriqueResponse" />
+  </wsdl:message>
+  <wsdl:message name="findArticleSoapIn">
+    <wsdl:part name="parameters" element="tns:findArticle" />
+  </wsdl:message>
+  <wsdl:message name="findArticleSoapOut">
+    <wsdl:part name="parameters" element="tns:findArticleResponse" />
+  </wsdl:message>
   <wsdl:message name="createPaysSoapIn">
     <wsdl:part name="parameters" element="tns:createPays" />
   </wsdl:message>
@@ -96,6 +152,12 @@
   <wsdl:message name="getAllRubriqueSoapOut">
     <wsdl:part name="parameters" element="tns:getAllRubriqueResponse" />
   </wsdl:message>
+  <wsdl:message name="createRubriqueSoapIn">
+    <wsdl:part name="parameters" element="tns:createRubrique" />
+  </wsdl:message>
+  <wsdl:message name="createRubriqueSoapOut">
+    <wsdl:part name="parameters" element="tns:createRubriqueResponse" />
+  </wsdl:message>
   <wsdl:message name="HelloWorld2SoapIn">
     <wsdl:part name="parameters" element="tns:HelloWorld2" />
   </wsdl:message>
@@ -107,6 +169,14 @@
       <wsdl:input message="tns:getAllArticlesSoapIn" />
       <wsdl:output message="tns:getAllArticlesSoapOut" />
     </wsdl:operation>
+    <wsdl:operation name="getAllArticlesFromRubrique">
+      <wsdl:input message="tns:getAllArticlesFromRubriqueSoapIn" />
+      <wsdl:output message="tns:getAllArticlesFromRubriqueSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="findArticle">
+      <wsdl:input message="tns:findArticleSoapIn" />
+      <wsdl:output message="tns:findArticleSoapOut" />
+    </wsdl:operation>
     <wsdl:operation name="createPays">
       <wsdl:input message="tns:createPaysSoapIn" />
       <wsdl:output message="tns:createPaysSoapOut" />
@@ -114,6 +184,10 @@
     <wsdl:operation name="getAllRubrique">
       <wsdl:input message="tns:getAllRubriqueSoapIn" />
       <wsdl:output message="tns:getAllRubriqueSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="createRubrique">
+      <wsdl:input message="tns:createRubriqueSoapIn" />
+      <wsdl:output message="tns:createRubriqueSoapOut" />
     </wsdl:operation>
     <wsdl:operation name="HelloWorld2">
       <wsdl:input message="tns:HelloWorld2SoapIn" />
@@ -124,6 +198,24 @@
     <soap:binding transport="http://schemas.xmlsoap.org/soap/http" />
     <wsdl:operation name="getAllArticles">
       <soap:operation soapAction="http://tempuri.org/getAllArticles" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getAllArticlesFromRubrique">
+      <soap:operation soapAction="http://tempuri.org/getAllArticlesFromRubrique" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="findArticle">
+      <soap:operation soapAction="http://tempuri.org/findArticle" style="document" />
       <wsdl:input>
         <soap:body use="literal" />
       </wsdl:input>
@@ -142,6 +234,15 @@
     </wsdl:operation>
     <wsdl:operation name="getAllRubrique">
       <soap:operation soapAction="http://tempuri.org/getAllRubrique" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="createRubrique">
+      <soap:operation soapAction="http://tempuri.org/createRubrique" style="document" />
       <wsdl:input>
         <soap:body use="literal" />
       </wsdl:input>
@@ -170,6 +271,24 @@
         <soap12:body use="literal" />
       </wsdl:output>
     </wsdl:operation>
+    <wsdl:operation name="getAllArticlesFromRubrique">
+      <soap12:operation soapAction="http://tempuri.org/getAllArticlesFromRubrique" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="findArticle">
+      <soap12:operation soapAction="http://tempuri.org/findArticle" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
     <wsdl:operation name="createPays">
       <soap12:operation soapAction="http://tempuri.org/createPays" style="document" />
       <wsdl:input>
@@ -181,6 +300,15 @@
     </wsdl:operation>
     <wsdl:operation name="getAllRubrique">
       <soap12:operation soapAction="http://tempuri.org/getAllRubrique" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="createRubrique">
+      <soap12:operation soapAction="http://tempuri.org/createRubrique" style="document" />
       <wsdl:input>
         <soap12:body use="literal" />
       </wsdl:input>
@@ -200,10 +328,10 @@
   </wsdl:binding>
   <wsdl:service name="WebService2">
     <wsdl:port name="WebService2Soap" binding="tns:WebService2Soap">
-      <soap:address location="http://localhost:50149/WebService2.asmx" />
+      <soap:address location="http://localhost:8080/WebService2.asmx" />
     </wsdl:port>
     <wsdl:port name="WebService2Soap12" binding="tns:WebService2Soap12">
-      <soap12:address location="http://localhost:50149/WebService2.asmx" />
+      <soap12:address location="http://localhost:8080/WebService2.asmx" />
     </wsdl:port>
   </wsdl:service>
 </wsdl:definitions>

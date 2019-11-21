@@ -15,8 +15,24 @@ namespace ClassLibrary.DAO
 
         public override int create(CRubrique obj)
         {
-            Exception err = new Exception("not implemented");
-            throw err;
+            OracleCommand req = new OracleCommand();
+            req.Connection = _connex;
+            req.CommandText = "INSERT INTO RUBRIQUE (id, nom, description, id_parent) values (:id, :nom, :description, :id_parent)";
+
+            int id = (int)CSequence.getNextValue("RUBRIQUE", base._connex.ConnectionString);
+
+            OracleParameter pId = new OracleParameter("id", id);
+            OracleParameter pNom = new OracleParameter("nom", obj.Nom);
+            OracleParameter pDesc = new OracleParameter("description", obj.Description);
+            OracleParameter pIdParent = new OracleParameter("id_parent", obj.IDParent);
+
+            req.Parameters.Add(pId);
+            req.Parameters.Add(pNom);
+            req.Parameters.Add(pDesc);
+            req.Parameters.Add(pIdParent);
+
+            req.ExecuteNonQuery();
+            return id;
         }
         public override Boolean update(CRubrique obj)
         {

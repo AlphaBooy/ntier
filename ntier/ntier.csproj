@@ -79,7 +79,16 @@
     <None Include="Connected Services\ServiceReference2\ntier.ServiceReference2.createPaysResponse.datasource">
       <DependentUpon>Reference.svcmap</DependentUpon>
     </None>
+    <None Include="Connected Services\ServiceReference2\ntier.ServiceReference2.createRubriqueResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
     <None Include="Connected Services\ServiceReference2\ntier.ServiceReference2.CRubrique.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\ServiceReference2\ntier.ServiceReference2.findArticleResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\ServiceReference2\ntier.ServiceReference2.getAllArticlesFromRubriqueResponse.datasource">
       <DependentUpon>Reference.svcmap</DependentUpon>
     </None>
     <None Include="Connected Services\ServiceReference2\ntier.ServiceReference2.getAllArticlesResponse.datasource">
@@ -91,7 +100,7 @@
     <None Include="Connected Services\ServiceReference2\ntier.ServiceReference2.HelloWorld2Response.datasource">
       <DependentUpon>Reference.svcmap</DependentUpon>
     </None>
-    <None Include="Connected Services\ServiceReference2\WebService2.wsdl" />
+    <None Include="Connected Services\ServiceReference2\WebService21.wsdl" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>
@@ -112,9 +121,6 @@
     <WCFMetadataStorage Include="Connected Services\ServiceReference2\" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="Connected Services\ServiceReference2\WebService2.disco" />
-  </ItemGroup>
-  <ItemGroup>
     <None Include="Connected Services\ServiceReference2\configuration91.svcinfo" />
   </ItemGroup>
   <ItemGroup>
@@ -125,6 +131,9 @@
       <Generator>WCF Proxy Generator</Generator>
       <LastGenOutput>Reference.cs</LastGenOutput>
     </None>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Connected Services\ServiceReference2\WebService21.disco" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

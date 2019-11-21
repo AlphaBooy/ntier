@@ -22,7 +22,18 @@ namespace ntier
 
         private void Form1_Load(object sender, EventArgs e)
         {
+            getRubriques(treeView1.Nodes.Add("Rubriques"), null, client.getAllRubrique());
+        }
 
+        public void getRubriques(TreeNode node, Nullable<int> idRubrique, ServiceReference2.CRubrique[] listRubriques)
+        {
+            foreach (ServiceReference2.CRubrique element in listRubriques)
+            {
+                TreeNode NoeudFils = new TreeNode(element.ToString());
+                NoeudFils.Tag = element.Id;
+                node.Nodes.Add(NoeudFils);
+                getRubriques(NoeudFils, element.Id, element.RubriquesFilles);
+            }
         }
 
         private void button1_Click(object sender, EventArgs e)
