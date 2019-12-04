@@ -2,6 +2,187 @@
 <wsdl:definitions xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:mime="http://schemas.xmlsoap.org/wsdl/mime/" xmlns:tns="http://tempuri.org/" xmlns:s="http://www.w3.org/2001/XMLSchema" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:tm="http://microsoft.com/wsdl/mime/textMatching/" xmlns:http="http://schemas.xmlsoap.org/wsdl/http/" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" targetNamespace="http://tempuri.org/" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
   <wsdl:types>
     <s:schema elementFormDefault="qualified" targetNamespace="http://tempuri.org/">
+      <s:element name="HelloWorld2">
+        <s:complexType />
+      </s:element>
+      <s:element name="HelloWorld2Response">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="HelloWorld2Result" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="getAllVilleFromDepartement">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="id_departement" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="getAllVilleFromDepartementResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="getAllVilleFromDepartementResult" type="tns:ArrayOfCVille" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="ArrayOfCVille">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="unbounded" name="CVille" nillable="true" type="tns:CVille" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="CVille">
+        <s:sequence>
+          <s:element minOccurs="1" maxOccurs="1" name="Code_Postal" type="s:int" />
+          <s:element minOccurs="0" maxOccurs="1" name="Nom" type="s:string" />
+        </s:sequence>
+      </s:complexType>
+      <s:element name="getAllRubrique">
+        <s:complexType />
+      </s:element>
+      <s:element name="getAllRubriqueResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="getAllRubriqueResult" type="tns:ArrayOfCRubrique" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="ArrayOfCRubrique">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="unbounded" name="CRubrique" nillable="true" type="tns:CRubrique" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="CRubrique">
+        <s:sequence>
+          <s:element minOccurs="1" maxOccurs="1" name="Id" type="s:int" />
+          <s:element minOccurs="0" maxOccurs="1" name="Nom" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="Description" type="s:string" />
+          <s:element minOccurs="1" maxOccurs="1" name="IDParent" nillable="true" type="s:int" />
+          <s:element minOccurs="0" maxOccurs="1" name="RubriquesFilles" type="tns:ArrayOfCRubrique" />
+        </s:sequence>
+      </s:complexType>
+      <s:element name="createRubrique">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="nom" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="description" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="id_parent" type="tns:CRubrique" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="createRubriqueResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="createRubriqueResult" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="getAllRegionFromPays">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="id_pays" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="getAllRegionFromPaysResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="getAllRegionFromPaysResult" type="tns:ArrayOfCRegion" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="ArrayOfCRegion">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="unbounded" name="CRegion" nillable="true" type="tns:CRegion" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="CRegion">
+        <s:sequence>
+          <s:element minOccurs="1" maxOccurs="1" name="Id" type="s:int" />
+          <s:element minOccurs="0" maxOccurs="1" name="Nom" type="s:string" />
+        </s:sequence>
+      </s:complexType>
+      <s:element name="createPays">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="nom" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="createPaysResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="createPaysResult" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="createLignePanier">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="numero_client" type="s:int" />
+            <s:element minOccurs="1" maxOccurs="1" name="id_article" type="s:int" />
+            <s:element minOccurs="1" maxOccurs="1" name="quantite" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="createLignePanierResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="createLignePanierResult" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="getAllLignePanierFromClient">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="numero_client" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="getAllLignePanierFromClientResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="getAllLignePanierFromClientResult" type="tns:ArrayOfCLignePanier" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="ArrayOfCLignePanier">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="unbounded" name="CLignePanier" nillable="true" type="tns:CLignePanier" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="CLignePanier">
+        <s:sequence>
+          <s:element minOccurs="1" maxOccurs="1" name="Numero_Client" type="s:int" />
+          <s:element minOccurs="1" maxOccurs="1" name="Id_Article" type="s:int" />
+          <s:element minOccurs="1" maxOccurs="1" name="Quantite" type="s:int" />
+        </s:sequence>
+      </s:complexType>
+      <s:element name="getAllDepartementFromRegion">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="id_region" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="getAllDepartementFromRegionResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="getAllDepartementFromRegionResult" type="tns:ArrayOfCDepartement" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="ArrayOfCDepartement">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="unbounded" name="CDepartement" nillable="true" type="tns:CDepartement" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="CDepartement">
+        <s:sequence>
+          <s:element minOccurs="1" maxOccurs="1" name="Numero" type="s:int" />
+          <s:element minOccurs="0" maxOccurs="1" name="Nom" type="s:string" />
+        </s:sequence>
+      </s:complexType>
       <s:element name="getAllArticles">
         <s:complexType />
       </s:element>
@@ -56,72 +237,62 @@
           </s:sequence>
         </s:complexType>
       </s:element>
-      <s:element name="createPays">
-        <s:complexType>
-          <s:sequence>
-            <s:element minOccurs="0" maxOccurs="1" name="nom" type="s:string" />
-          </s:sequence>
-        </s:complexType>
-      </s:element>
-      <s:element name="createPaysResponse">
-        <s:complexType>
-          <s:sequence>
-            <s:element minOccurs="1" maxOccurs="1" name="createPaysResult" type="s:int" />
-          </s:sequence>
-        </s:complexType>
-      </s:element>
-      <s:element name="getAllRubrique">
-        <s:complexType />
-      </s:element>
-      <s:element name="getAllRubriqueResponse">
-        <s:complexType>
-          <s:sequence>
-            <s:element minOccurs="0" maxOccurs="1" name="getAllRubriqueResult" type="tns:ArrayOfCRubrique" />
-          </s:sequence>
-        </s:complexType>
-      </s:element>
-      <s:complexType name="ArrayOfCRubrique">
-        <s:sequence>
-          <s:element minOccurs="0" maxOccurs="unbounded" name="CRubrique" nillable="true" type="tns:CRubrique" />
-        </s:sequence>
-      </s:complexType>
-      <s:complexType name="CRubrique">
-        <s:sequence>
-          <s:element minOccurs="1" maxOccurs="1" name="Id" type="s:int" />
-          <s:element minOccurs="0" maxOccurs="1" name="Nom" type="s:string" />
-          <s:element minOccurs="0" maxOccurs="1" name="Description" type="s:string" />
-          <s:element minOccurs="1" maxOccurs="1" name="IDParent" nillable="true" type="s:int" />
-          <s:element minOccurs="0" maxOccurs="1" name="RubriquesFilles" type="tns:ArrayOfCRubrique" />
-        </s:sequence>
-      </s:complexType>
-      <s:element name="createRubrique">
-        <s:complexType>
-          <s:sequence>
-            <s:element minOccurs="0" maxOccurs="1" name="nom" type="s:string" />
-            <s:element minOccurs="0" maxOccurs="1" name="description" type="s:string" />
-            <s:element minOccurs="0" maxOccurs="1" name="id_parent" type="tns:CRubrique" />
-          </s:sequence>
-        </s:complexType>
-      </s:element>
-      <s:element name="createRubriqueResponse">
-        <s:complexType>
-          <s:sequence>
-            <s:element minOccurs="1" maxOccurs="1" name="createRubriqueResult" type="s:int" />
-          </s:sequence>
-        </s:complexType>
-      </s:element>
-      <s:element name="HelloWorld2">
-        <s:complexType />
-      </s:element>
-      <s:element name="HelloWorld2Response">
-        <s:complexType>
-          <s:sequence>
-            <s:element minOccurs="0" maxOccurs="1" name="HelloWorld2Result" type="s:string" />
-          </s:sequence>
-        </s:complexType>
-      </s:element>
     </s:schema>
   </wsdl:types>
+  <wsdl:message name="HelloWorld2SoapIn">
+    <wsdl:part name="parameters" element="tns:HelloWorld2" />
+  </wsdl:message>
+  <wsdl:message name="HelloWorld2SoapOut">
+    <wsdl:part name="parameters" element="tns:HelloWorld2Response" />
+  </wsdl:message>
+  <wsdl:message name="getAllVilleFromDepartementSoapIn">
+    <wsdl:part name="parameters" element="tns:getAllVilleFromDepartement" />
+  </wsdl:message>
+  <wsdl:message name="getAllVilleFromDepartementSoapOut">
+    <wsdl:part name="parameters" element="tns:getAllVilleFromDepartementResponse" />
+  </wsdl:message>
+  <wsdl:message name="getAllRubriqueSoapIn">
+    <wsdl:part name="parameters" element="tns:getAllRubrique" />
+  </wsdl:message>
+  <wsdl:message name="getAllRubriqueSoapOut">
+    <wsdl:part name="parameters" element="tns:getAllRubriqueResponse" />
+  </wsdl:message>
+  <wsdl:message name="createRubriqueSoapIn">
+    <wsdl:part name="parameters" element="tns:createRubrique" />
+  </wsdl:message>
+  <wsdl:message name="createRubriqueSoapOut">
+    <wsdl:part name="parameters" element="tns:createRubriqueResponse" />
+  </wsdl:message>
+  <wsdl:message name="getAllRegionFromPaysSoapIn">
+    <wsdl:part name="parameters" element="tns:getAllRegionFromPays" />
+  </wsdl:message>
+  <wsdl:message name="getAllRegionFromPaysSoapOut">
+    <wsdl:part name="parameters" element="tns:getAllRegionFromPaysResponse" />
+  </wsdl:message>
+  <wsdl:message name="createPaysSoapIn">
+    <wsdl:part name="parameters" element="tns:createPays" />
+  </wsdl:message>
+  <wsdl:message name="createPaysSoapOut">
+    <wsdl:part name="parameters" element="tns:createPaysResponse" />
+  </wsdl:message>
+  <wsdl:message name="createLignePanierSoapIn">
+    <wsdl:part name="parameters" element="tns:createLignePanier" />
+  </wsdl:message>
+  <wsdl:message name="createLignePanierSoapOut">
+    <wsdl:part name="parameters" element="tns:createLignePanierResponse" />
+  </wsdl:message>
+  <wsdl:message name="getAllLignePanierFromClientSoapIn">
+    <wsdl:part name="parameters" element="tns:getAllLignePanierFromClient" />
+  </wsdl:message>
+  <wsdl:message name="getAllLignePanierFromClientSoapOut">
+    <wsdl:part name="parameters" element="tns:getAllLignePanierFromClientResponse" />
+  </wsdl:message>
+  <wsdl:message name="getAllDepartementFromRegionSoapIn">
+    <wsdl:part name="parameters" element="tns:getAllDepartementFromRegion" />
+  </wsdl:message>
+  <wsdl:message name="getAllDepartementFromRegionSoapOut">
+    <wsdl:part name="parameters" element="tns:getAllDepartementFromRegionResponse" />
+  </wsdl:message>
   <wsdl:message name="getAllArticlesSoapIn">
     <wsdl:part name="parameters" element="tns:getAllArticles" />
   </wsdl:message>
@@ -140,31 +311,43 @@
   <wsdl:message name="findArticleSoapOut">
     <wsdl:part name="parameters" element="tns:findArticleResponse" />
   </wsdl:message>
-  <wsdl:message name="createPaysSoapIn">
-    <wsdl:part name="parameters" element="tns:createPays" />
-  </wsdl:message>
-  <wsdl:message name="createPaysSoapOut">
-    <wsdl:part name="parameters" element="tns:createPaysResponse" />
-  </wsdl:message>
-  <wsdl:message name="getAllRubriqueSoapIn">
-    <wsdl:part name="parameters" element="tns:getAllRubrique" />
-  </wsdl:message>
-  <wsdl:message name="getAllRubriqueSoapOut">
-    <wsdl:part name="parameters" element="tns:getAllRubriqueResponse" />
-  </wsdl:message>
-  <wsdl:message name="createRubriqueSoapIn">
-    <wsdl:part name="parameters" element="tns:createRubrique" />
-  </wsdl:message>
-  <wsdl:message name="createRubriqueSoapOut">
-    <wsdl:part name="parameters" element="tns:createRubriqueResponse" />
-  </wsdl:message>
-  <wsdl:message name="HelloWorld2SoapIn">
-    <wsdl:part name="parameters" element="tns:HelloWorld2" />
-  </wsdl:message>
-  <wsdl:message name="HelloWorld2SoapOut">
-    <wsdl:part name="parameters" element="tns:HelloWorld2Response" />
-  </wsdl:message>
   <wsdl:portType name="WebService2Soap">
+    <wsdl:operation name="HelloWorld2">
+      <wsdl:input message="tns:HelloWorld2SoapIn" />
+      <wsdl:output message="tns:HelloWorld2SoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="getAllVilleFromDepartement">
+      <wsdl:input message="tns:getAllVilleFromDepartementSoapIn" />
+      <wsdl:output message="tns:getAllVilleFromDepartementSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="getAllRubrique">
+      <wsdl:input message="tns:getAllRubriqueSoapIn" />
+      <wsdl:output message="tns:getAllRubriqueSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="createRubrique">
+      <wsdl:input message="tns:createRubriqueSoapIn" />
+      <wsdl:output message="tns:createRubriqueSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="getAllRegionFromPays">
+      <wsdl:input message="tns:getAllRegionFromPaysSoapIn" />
+      <wsdl:output message="tns:getAllRegionFromPaysSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="createPays">
+      <wsdl:input message="tns:createPaysSoapIn" />
+      <wsdl:output message="tns:createPaysSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="createLignePanier">
+      <wsdl:input message="tns:createLignePanierSoapIn" />
+      <wsdl:output message="tns:createLignePanierSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="getAllLignePanierFromClient">
+      <wsdl:input message="tns:getAllLignePanierFromClientSoapIn" />
+      <wsdl:output message="tns:getAllLignePanierFromClientSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="getAllDepartementFromRegion">
+      <wsdl:input message="tns:getAllDepartementFromRegionSoapIn" />
+      <wsdl:output message="tns:getAllDepartementFromRegionSoapOut" />
+    </wsdl:operation>
     <wsdl:operation name="getAllArticles">
       <wsdl:input message="tns:getAllArticlesSoapIn" />
       <wsdl:output message="tns:getAllArticlesSoapOut" />
@@ -177,25 +360,90 @@
       <wsdl:input message="tns:findArticleSoapIn" />
       <wsdl:output message="tns:findArticleSoapOut" />
     </wsdl:operation>
-    <wsdl:operation name="createPays">
-      <wsdl:input message="tns:createPaysSoapIn" />
-      <wsdl:output message="tns:createPaysSoapOut" />
-    </wsdl:operation>
-    <wsdl:operation name="getAllRubrique">
-      <wsdl:input message="tns:getAllRubriqueSoapIn" />
-      <wsdl:output message="tns:getAllRubriqueSoapOut" />
-    </wsdl:operation>
-    <wsdl:operation name="createRubrique">
-      <wsdl:input message="tns:createRubriqueSoapIn" />
-      <wsdl:output message="tns:createRubriqueSoapOut" />
-    </wsdl:operation>
-    <wsdl:operation name="HelloWorld2">
-      <wsdl:input message="tns:HelloWorld2SoapIn" />
-      <wsdl:output message="tns:HelloWorld2SoapOut" />
-    </wsdl:operation>
   </wsdl:portType>
   <wsdl:binding name="WebService2Soap" type="tns:WebService2Soap">
     <soap:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="HelloWorld2">
+      <soap:operation soapAction="http://tempuri.org/HelloWorld2" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getAllVilleFromDepartement">
+      <soap:operation soapAction="http://tempuri.org/getAllVilleFromDepartement" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getAllRubrique">
+      <soap:operation soapAction="http://tempuri.org/getAllRubrique" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="createRubrique">
+      <soap:operation soapAction="http://tempuri.org/createRubrique" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getAllRegionFromPays">
+      <soap:operation soapAction="http://tempuri.org/getAllRegionFromPays" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="createPays">
+      <soap:operation soapAction="http://tempuri.org/createPays" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="createLignePanier">
+      <soap:operation soapAction="http://tempuri.org/createLignePanier" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getAllLignePanierFromClient">
+      <soap:operation soapAction="http://tempuri.org/getAllLignePanierFromClient" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getAllDepartementFromRegion">
+      <soap:operation soapAction="http://tempuri.org/getAllDepartementFromRegion" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
     <wsdl:operation name="getAllArticles">
       <soap:operation soapAction="http://tempuri.org/getAllArticles" style="document" />
       <wsdl:input>
@@ -223,47 +471,11 @@
         <soap:body use="literal" />
       </wsdl:output>
     </wsdl:operation>
-    <wsdl:operation name="createPays">
-      <soap:operation soapAction="http://tempuri.org/createPays" style="document" />
-      <wsdl:input>
-        <soap:body use="literal" />
-      </wsdl:input>
-      <wsdl:output>
-        <soap:body use="literal" />
-      </wsdl:output>
-    </wsdl:operation>
-    <wsdl:operation name="getAllRubrique">
-      <soap:operation soapAction="http://tempuri.org/getAllRubrique" style="document" />
-      <wsdl:input>
-        <soap:body use="literal" />
-      </wsdl:input>
-      <wsdl:output>
-        <soap:body use="literal" />
-      </wsdl:output>
-    </wsdl:operation>
-    <wsdl:operation name="createRubrique">
-      <soap:operation soapAction="http://tempuri.org/createRubrique" style="document" />
-      <wsdl:input>
-        <soap:body use="literal" />
-      </wsdl:input>
-      <wsdl:output>
-        <soap:body use="literal" />
-      </wsdl:output>
-    </wsdl:operation>
-    <wsdl:operation name="HelloWorld2">
-      <soap:operation soapAction="http://tempuri.org/HelloWorld2" style="document" />
-      <wsdl:input>
-        <soap:body use="literal" />
-      </wsdl:input>
-      <wsdl:output>
-        <soap:body use="literal" />
-      </wsdl:output>
-    </wsdl:operation>
   </wsdl:binding>
   <wsdl:binding name="WebService2Soap12" type="tns:WebService2Soap">
     <soap12:binding transport="http://schemas.xmlsoap.org/soap/http" />
-    <wsdl:operation name="getAllArticles">
-      <soap12:operation soapAction="http://tempuri.org/getAllArticles" style="document" />
+    <wsdl:operation name="HelloWorld2">
+      <soap12:operation soapAction="http://tempuri.org/HelloWorld2" style="document" />
       <wsdl:input>
         <soap12:body use="literal" />
       </wsdl:input>
@@ -271,26 +483,8 @@
         <soap12:body use="literal" />
       </wsdl:output>
     </wsdl:operation>
-    <wsdl:operation name="getAllArticlesFromRubrique">
-      <soap12:operation soapAction="http://tempuri.org/getAllArticlesFromRubrique" style="document" />
-      <wsdl:input>
-        <soap12:body use="literal" />
-      </wsdl:input>
-      <wsdl:output>
-        <soap12:body use="literal" />
-      </wsdl:output>
-    </wsdl:operation>
-    <wsdl:operation name="findArticle">
-      <soap12:operation soapAction="http://tempuri.org/findArticle" style="document" />
-      <wsdl:input>
-        <soap12:body use="literal" />
-      </wsdl:input>
-      <wsdl:output>
-        <soap12:body use="literal" />
-      </wsdl:output>
-    </wsdl:operation>
-    <wsdl:operation name="createPays">
-      <soap12:operation soapAction="http://tempuri.org/createPays" style="document" />
+    <wsdl:operation name="getAllVilleFromDepartement">
+      <soap12:operation soapAction="http://tempuri.org/getAllVilleFromDepartement" style="document" />
       <wsdl:input>
         <soap12:body use="literal" />
       </wsdl:input>
@@ -316,8 +510,71 @@
         <soap12:body use="literal" />
       </wsdl:output>
     </wsdl:operation>
-    <wsdl:operation name="HelloWorld2">
-      <soap12:operation soapAction="http://tempuri.org/HelloWorld2" style="document" />
+    <wsdl:operation name="getAllRegionFromPays">
+      <soap12:operation soapAction="http://tempuri.org/getAllRegionFromPays" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="createPays">
+      <soap12:operation soapAction="http://tempuri.org/createPays" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="createLignePanier">
+      <soap12:operation soapAction="http://tempuri.org/createLignePanier" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getAllLignePanierFromClient">
+      <soap12:operation soapAction="http://tempuri.org/getAllLignePanierFromClient" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getAllDepartementFromRegion">
+      <soap12:operation soapAction="http://tempuri.org/getAllDepartementFromRegion" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getAllArticles">
+      <soap12:operation soapAction="http://tempuri.org/getAllArticles" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getAllArticlesFromRubrique">
+      <soap12:operation soapAction="http://tempuri.org/getAllArticlesFromRubrique" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="findArticle">
+      <soap12:operation soapAction="http://tempuri.org/findArticle" style="document" />
       <wsdl:input>
         <soap12:body use="literal" />
       </wsdl:input>

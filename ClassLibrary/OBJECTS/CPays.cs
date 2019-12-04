@@ -14,6 +14,11 @@ namespace ClassLibrary.OBJECTS
         public int Id { get { return this.id; }  set { this.id = value; } }
         public String Nom { get { return this.nom; } set { this.nom = value; } }
 
+        public CPays()
+        {
+            //Constructeur vide
+        }
+
         public CPays(String nom)
         {
             this.nom = nom;

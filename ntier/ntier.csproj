@@ -76,13 +76,25 @@
     <None Include="Connected Services\ServiceReference2\ntier.ServiceReference2.CArticle.datasource">
       <DependentUpon>Reference.svcmap</DependentUpon>
     </None>
+    <None Include="Connected Services\ServiceReference2\ntier.ServiceReference2.CDepartement.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\ServiceReference2\ntier.ServiceReference2.CLignePanier.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
     <None Include="Connected Services\ServiceReference2\ntier.ServiceReference2.createPaysResponse.datasource">
       <DependentUpon>Reference.svcmap</DependentUpon>
     </None>
     <None Include="Connected Services\ServiceReference2\ntier.ServiceReference2.createRubriqueResponse.datasource">
       <DependentUpon>Reference.svcmap</DependentUpon>
     </None>
+    <None Include="Connected Services\ServiceReference2\ntier.ServiceReference2.CRegion.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
     <None Include="Connected Services\ServiceReference2\ntier.ServiceReference2.CRubrique.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\ServiceReference2\ntier.ServiceReference2.CVille.datasource">
       <DependentUpon>Reference.svcmap</DependentUpon>
     </None>
     <None Include="Connected Services\ServiceReference2\ntier.ServiceReference2.findArticleResponse.datasource">
@@ -94,7 +106,19 @@
     <None Include="Connected Services\ServiceReference2\ntier.ServiceReference2.getAllArticlesResponse.datasource">
       <DependentUpon>Reference.svcmap</DependentUpon>
     </None>
+    <None Include="Connected Services\ServiceReference2\ntier.ServiceReference2.getAllDepartementFromRegionResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\ServiceReference2\ntier.ServiceReference2.getAllLignePanierFromClientResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\ServiceReference2\ntier.ServiceReference2.getAllRegionFromPaysResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
     <None Include="Connected Services\ServiceReference2\ntier.ServiceReference2.getAllRubriqueResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\ServiceReference2\ntier.ServiceReference2.getAllVilleFromDepartementResponse.datasource">
       <DependentUpon>Reference.svcmap</DependentUpon>
     </None>
     <None Include="Connected Services\ServiceReference2\ntier.ServiceReference2.HelloWorld2Response.datasource">

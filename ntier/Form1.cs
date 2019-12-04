@@ -10,8 +10,12 @@ using System.Windows.Forms;
 
 namespace ntier
 {
+
+
     public partial class Form1 : Form
     {
+        public const int NUMERO_CLIENT = 1;
+
         ServiceReference2.WebService2SoapClient client;
         private ServiceReference2.CRubrique selectedNode;
 
@@ -25,6 +29,7 @@ namespace ntier
         private void Form1_Load(object sender, EventArgs e)
         {
             getRubriques(treeViewRubriques.Nodes.Add("Rubriques"), null, client.getAllRubrique());
+            displayPanier();
         }
 
         public void getRubriques(TreeNode node, Nullable<int> idRubrique, ServiceReference2.CRubrique[] listRubriques)
@@ -38,33 +43,10 @@ namespace ntier
             }
         }
 
-        private void button1_Click(object sender, EventArgs e)
-        {
-            if (textBox1.Text == null || textBox1.Text == "")
-            {
-                MessageBox.Show("Veuillez renseigner le nom du pays !");
-            }
-            else
-            {
-                client.createPaysAsync(textBox1.Text);
-            }
-            //client.HelloWorld1Completed += Client_HelloWorld1Completed;
-            //client.HelloWorld1Async();
-        }
-
-        //private void Client_HelloWorld1Completed(object sender, ServiceReference1.HelloWorld1CompletedEventArgs e)
-        //{
-        //    MessageBox.Show(e.Result);
-        //}
-
-        private void textBox1_TextChanged(object sender, EventArgs e)
-        {
-
-        }
-
         private void treeViewRubriques_AfterSelect(object sender, TreeViewEventArgs e)
         {
             ServiceReference2.CRubrique selectedNode = (ServiceReference2.CRubrique)e.Node.Tag;
+            if (selectedNode != null)
             displayArticles(selectedNode);
         }
 
@@ -112,9 +94,51 @@ namespace ntier
             dataGridViewArticles.DataSource = dtArticle;
         }
 
+        private void displayPanier()
+        {
+            ServiceReference2.CLignePanier[] panier = client.getAllLignePanierFromClient(NUMERO_CLIENT);
+
+            DataTable dtPanier = new DataTable();
+            dtPanier.Columns.Add("Nom");
+            dtPanier.Columns.Add("Description");
+            dtPanier.Columns.Add("Prix Unitaire");
+            dtPanier.Columns.Add("Poids");
+            dtPanier.Columns.Add("Articles en stock");
+            dtPanier.Columns.Add("Quantité");
+
+            foreach (ServiceReference2.CLignePanier element in panier)
+            {
+                ServiceReference2.CArticle article = client.findArticle(element.Id_Article);
+
+                DataRow dr = dtPanier.NewRow();
+                dr["Nom"] = article.Nom;
+                dr["Description"] = article.Description;
+                dr["Prix Unitaire"] = article.Prix_unitaire;
+                dr["Poids"] = article.Poids;
+                dr["Articles en stock"] = article.Quantite_stock;
+                dr["Quantité"] = element.Quantite;
+                dtPanier.Rows.Add(dr);
+            }
+            dataGridViewPanier.DataSource = dtPanier;
+        }
+
         private void label1_Click(object sender, EventArgs e)
         {
 
+        }
+
+        private void dataGridViewArticles_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+
+        }
+
+        private void dataGridViewArticles_CellContentDoubleClick(object sender, DataGridViewCellEventArgs e)
+        {
+            client.ajoutLignePanier(NUMERO_CLIENT,((ServiceReference2.CArticle)dataGridViewArticles.CurrentRow.DataBoundItem).Id);
+        }
+
+        private void button2_Click(object sender, EventArgs e)
+        {
         }
     }
 }

@@ -44,16 +44,27 @@
   <ItemGroup>
     <Compile Include="DAO.cs" />
     <Compile Include="DAO\CArticleDAO.cs" />
+    <Compile Include="DAO\CDepartementDAO.cs" />
+    <Compile Include="DAO\CLignePanierDAO.cs" />
     <Compile Include="DAO\CPaysDAO.cs" />
+    <Compile Include="DAO\CRegionDAO.cs" />
     <Compile Include="DAO\CRubriqueDAO.cs" />
     <Compile Include="DAO\CSequence.cs" />
+    <Compile Include="DAO\CVilleDAO.cs" />
     <Compile Include="DAO\DAOFactory.cs" />
     <Compile Include="DAO\_CArticleDAO.cs" />
+    <Compile Include="DAO\_CDepartementDAO.cs" />
+    <Compile Include="DAO\_CLignePanierDAO.cs" />
     <Compile Include="DAO\_CPaysDAO.cs" />
+    <Compile Include="DAO\_CRegionDAO.cs" />
     <Compile Include="DAO\_CRubriqueDAO.cs" />
+    <Compile Include="DAO\_CVilleDAO.cs" />
     <Compile Include="OBJECTS\CArticle.cs" />
+    <Compile Include="OBJECTS\CDepartement.cs" />
+    <Compile Include="OBJECTS\CLignePanier.cs" />
     <Compile Include="OBJECTS\CRubrique.cs" />
     <Compile Include="OBJECTS\CRegion.cs" />
+    <Compile Include="OBJECTS\CVille.cs" />
     <Compile Include="SingleConnection.cs" />
     <Compile Include="OBJECTS\CPays.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />

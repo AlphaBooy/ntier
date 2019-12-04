@@ -6,26 +6,23 @@ using System.Threading.Tasks;
 
 namespace ClassLibrary.OBJECTS
 {
-    public class CRegion
+    public class CDepartement
     {
-        private int id;
+        private int numero;
         private String nom;
-        private int id_pays;
+        private int id_region;
 
-        public int Id { get { return this.id; } set { this.id = value; } }
+        public int Numero { get { return this.numero; } set { this.numero = value; } }
         public String Nom { get { return this.nom; } set { this.nom = value; } }
-        public int Id_Pays { get { return this.Id_Pays; } }
+        public int Id_Region { get { return this.id_region; } }
 
-        public CRegion()
-        {
-            //Constructeur vide
-        }
+        public CDepartement() { }
 
-        public CRegion(int id, String nom, int id_pays)
+        public CDepartement(int numero, String nom, int id_region)
         {
-            this.id = id;
+            this.numero = numero;
             this.nom = nom;
-            this.id_pays = id_pays;
+            this.id_region = id_region;
         }
 
         public override string ToString()
